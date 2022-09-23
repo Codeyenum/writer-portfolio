@@ -4,24 +4,14 @@
 
 :root {
     /* colors */
-    /* 
-    background: hsl(0, 0%, 98%); 
-    dark-mode : hsl(0, 0%, 5%);
-    primary: hsl(303, 9%, 52%);
-    menu-purple-dark:  hsl(303, 8%, 44%);
-    menu-purple-darker:  hsl(300, 8%, 17%);
-     */
     --clr-black: 0, 0%, 5%;
     --clr-white: 0 0% 98%;
     --clr-purple: 303, 9%, 52%;
     --clr-dark-purple: 303, 8%, 44%;
     --clr-darker-purple: 300, 8%, 17%;
 
-    --fg-color: var(--clr-black);
-    --bg-color: var(--clr-white);
-    /* bg changes from white to black */
-    /* text changes from black to white */
-
+    --fg-color: hsl(var(--clr-black));
+    --bg-color: hsl(var(--clr-white));
 
     /* font-sizes */
     --fs-900: 1.75rem;
