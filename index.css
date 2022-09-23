@@ -74,8 +74,8 @@ body {
         --clr-black: 0, 0%, 5%;
         --clr-white: 0 0% 98%;
     
-        --fg-color: var(--clr-white);
-        --bg-color: var(--clr-black);
+        --fg-color: hsl(var(--clr-white));
+        --bg-color: hsl(var(--clr-black));
     }
 }
 
