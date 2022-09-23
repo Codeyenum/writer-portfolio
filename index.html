@@ -19,13 +19,25 @@
 
 <body>
     <header class="container flex-row">
-        <a href="./index.html">
+        <a class="fg-color" href="./index.html">
             <h1 class="fs-700 ff-nothing">O.S</h1>
         </a>
-        <span class="material-symbols-outlined">
+        <span id="menu-button" class="material-symbols-outlined">
             menu
         </span>
-    </header>
+        <div class="mobile-nav-lightbox hide">
+            <div class="mobile-nav hide flex-col container">
+                <span id="close-button" class="right-align material-symbols-outlined">
+                    close
+                </span>
+                <nav class="flex-col">
+                    <a href="">Home</a>
+                    <a href="">My works</a>
+                    <a href="">Say Hi</a>
+                </nav>
+            </div>
+        </div>
+    </header>    
     <main class="flex-col main-container">
         <div class="flex-col">
             <img src="./images/model-portrait.jpg" alt="Omotola Saba">
