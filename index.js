@@ -27,10 +27,10 @@ function detectColorScheme() {
 
     let getTheme = localStorage.getItem("theme");
     //local storage is used to override OS theme settings
-    
+
         if (getTheme == "dark") {
             var theme = "dark";
-        
+
     } else if (!window.matchMedia) {
         //matchMedia method not supported
         return false;
