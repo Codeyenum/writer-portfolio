@@ -72,6 +72,25 @@ body {
 }
 
 /* setting dark mode based on system preference */
+@media (prefers-color-scheme: light) {
+    body {
+        --clr-black: 0, 0%, 5%;
+        --clr-white: 0 0% 98%;
+
+        --fg-color: hsl(var(--clr-black));
+        --bg-color: hsl(var(--clr-white));
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --clr-black: 0, 0%, 5%;
+        --clr-white: 0 0% 98%;
+
+        --fg-color: hsl(var(--clr-white));
+        --bg-color: hsl(var(--clr-black));
+    }
+}
 
 body.dark {
         --clr-black: 0, 0%, 5%;
