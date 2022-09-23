@@ -96,7 +96,7 @@ body {
 }
 
 .container {
-    padding-inline: 2em;
+    padding: 2em 1.5em;
     margin-inline: auto;
     max-width: 80rem;
 }
@@ -171,7 +171,7 @@ body {
 .main-container {    
     margin-inline: auto;    
     max-width: 100rem;
-    padding: 3.625em 1.5em;
+    padding: 2em 1.5em;
 }
 
 .bold-heading {
@@ -182,7 +182,7 @@ body {
     text-transform: uppercase;        
 }
 
-.home-link {    
+.home-link, .home-link:visited {    
     border: 1px solid hsl(var(--clr-purple));
     border-radius: 5px;
     color: hsl(var(--clr-purple));
@@ -195,4 +195,34 @@ body {
 
     text-decoration: none;
     text-align: center;        
+}
+
+.home-link:hover {
+    background-color: hsl(var(--clr-darker-purple));
+    color: hsl(var(--clr-white));
+}
+
+header {
+    align-items: center;
+    justify-content: space-between;    
+}
+
+header a {
+    text-decoration: none;
+    color: var(--fg-color);
+}
+
+.bar-box {
+    height: 30px;
+    width: 30px;
+    gap: 0px;  
+    align-items: flex-end;
+    justify-content: space-around; 
+    transform: translateY(-12.5%); 
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: var(--fg-color);    
 }
