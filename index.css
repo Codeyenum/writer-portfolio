@@ -10,8 +10,8 @@
     --clr-dark-purple: 303 8% 44%;
     --clr-darker-purple: 300 8% 17%;
 
-    --fg-color: hsl(var(--clr-black));
-    --bg-color: hsl(var(--clr-white));
+    /* --fg-color: hsl(var(--clr-black)); */
+    /* --bg-color: hsl(var(--clr-white)); */
 
     /* font-sizes */
     --fs-900: 1.75rem;
@@ -58,17 +58,6 @@ select {
     font: inherit;
 }
 
-/* setting dark mode based on system preference */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --clr-black: 0, 0%, 5%;
-        --clr-white: 0 0% 98%;
-
-        --fg-color: hsl(var(--clr-white));
-        --bg-color: hsl(var(--clr-black));
-    }
-}
-
 /* Body */
 body {
     background-color: var(--bg-color);
@@ -77,7 +66,31 @@ body {
     font-size: var(--fs-300);
     line-height: 2;
     min-height: 100vh;
+    
+    --fg-color: hsl(var(--clr-black));
+    --bg-color: hsl(var(--clr-white));
 }
+
+/* setting dark mode based on system preference */
+@media (prefers-color-scheme: light) {
+    :root {
+        --clr-black: 0, 0%, 5%;
+        --clr-white: 0 0% 98%;
+
+        --fg-color: hsl(var(--clr-black));
+        --bg-color: hsl(var(--clr-white));
+    }
+}
+
+body.dark {
+        --clr-black: 0, 0%, 5%;
+        --clr-white: 0 0% 98%;
+
+        --fg-color: hsl(var(--clr-white));
+        --bg-color: hsl(var(--clr-black));
+    }
+
+
 
 /* ------------------- */
 /* Utility Classes     */
