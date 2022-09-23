@@ -72,15 +72,6 @@ body {
 }
 
 /* setting dark mode based on system preference */
-@media (prefers-color-scheme: light) {
-    :root {
-        --clr-black: 0, 0%, 5%;
-        --clr-white: 0 0% 98%;
-
-        --fg-color: hsl(var(--clr-black));
-        --bg-color: hsl(var(--clr-white));
-    }
-}
 
 body.dark {
         --clr-black: 0, 0%, 5%;
