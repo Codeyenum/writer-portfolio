@@ -58,16 +58,6 @@ select {
     font: inherit;
 }
 
-/* Body */
-body {
-    background-color: hsl(--bg-color);
-    color: hsl(--fg-color);
-    font-family: var(--ff-pt-mono);
-    font-size: var(--fs-300);
-    line-height: 2;
-    min-height: 100vh;
-}
-
 /* setting dark mode based on system preference */
 @media (prefers-color-scheme: dark) {
     :root {
@@ -77,6 +67,16 @@ body {
         --fg-color: hsl(var(--clr-white));
         --bg-color: hsl(var(--clr-black));
     }
+}
+
+/* Body */
+body {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    font-family: var(--ff-pt-mono);
+    font-size: var(--fs-300);
+    line-height: 2;
+    min-height: 100vh;
 }
 
 /* ------------------- */
