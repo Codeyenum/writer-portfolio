@@ -291,8 +291,7 @@ footer.container {
 }
 
 .mobile-nav a.active {
-    background-color: hsl(var(--clr-dark-purple));
-    transition: .3s ease-in;
+    background-color: hsl(var(--clr-dark-purple));    
 }
 
 .mobile-nav a.active::before {
