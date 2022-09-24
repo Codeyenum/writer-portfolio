@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         homePage.classList.add("active");
     } else if (path == '/works/works.html') {
         worksPage.classList.add("active");
+        console.log("works");
     } else if (path == '/works/fashion.html') {
         worksPage.classList.add("active");
     } else if (path == '/contact.html') {
