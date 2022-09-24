@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let homePage = document.querySelector(".home-page");
     let worksPage = document.querySelector(".works-page");
     let contactPage = document.querySelector(".contact-page");
-
-    if (path.includes("index.html")) {
+    
+    if (path.includes("index.html") || path.endsWith("/writer-portfolio/")) {
         homePage.classList.add("active");        
     } else if (path.includes('/works/works.html')) {
         worksPage.classList.add("active");        
