@@ -3,6 +3,7 @@ let closeButton = document.querySelector("#close-button");
 
 let lightBox = document.querySelector(".mobile-nav-lightbox");
 let mobileNav = document.querySelector(".mobile-nav");
+let mobileNavMenu = document.querySelector(".mobile-nav a");
 
 let toggleButton = document.querySelector(".toggle-button");
 
@@ -16,71 +17,61 @@ closeButton.addEventListener("click", () => {
     mobileNav.classList.toggle("hide");
 })
 
-function detectColorScheme() {
-    let theme = "light";    //default to light
-    let getTheme = localStorage.getItem("theme");
+document.addEventListener("DOMContentLoaded", function () {
+    let path = window.location.pathname;
+    let homePage = document.querySelector(".home-page");
+    let worksPage = document.querySelector(".works-page");
+    let contactPage = document.querySelector(".contact-page");
 
-    //local storage is used to override OS theme settings
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
-        theme = "light";
-    } else if (getTheme == "dark") {
-        theme = "dark";
-    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        theme = "dark";
-    } else {
-        //OS theme setting detected as light
-        theme = "light";
+    if (path == '/index.html') {
+        homePage.classList.add("active");
+    } else if (path == '/works/works.html') {
+        worksPage.classList.add("active");
+    } else if (path == '/works/fashion.html') {
+        worksPage.classList.add("active");
+    } else if (path == '/contact.html') {
+        contactPage.classList.add("active");
     }
+});
 
-    //dark theme preferred, set document with a `data-theme` attribute    
-    if (theme == "dark") {
-        document.documentElement.setAttribute("data-theme", "dark");
-    }
+
+// check for saved 'darkMode' in localStorage
+let darkMode = localStorage.getItem('darkMode'); 
+
+// const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+const enableDarkMode = () => {
+  // 1. Add the class to the body
+  document.body.classList.add('dark');
+  // 2. Update darkMode in localStorage
+  localStorage.setItem('darkMode', 'enabled');
 }
-detectColorScheme();
 
-//pre-check the dark-theme checkbox if dark-theme is set
-if (document.documentElement.getAttribute("data-theme") == "dark") {
-    setToDarkMode()
+const disableDarkMode = () => {
+  // 1. Remove the class from the body
+  document.body.classList.remove('dark');
+  // 2. Update darkMode in localStorage 
+  localStorage.setItem('darkMode', null);
+}
+ 
+// If the user already visited and enabled darkMode
+// start things off with it on
+if (darkMode === 'enabled') {
+  enableDarkMode();
 } else {
-    setToLightMode();
+    disableDarkMode();
 }
 
-//function that tracks the dark theme between page loads with a localStorage variable 
-//sets the toggle button
-//and sets the dark theme styling
-function setToDarkMode() {
-    localStorage.setItem('theme', 'dark');
-    document.documentElement.setAttribute('data-theme', 'dark');
-    toggleButton.checked = true;
-    document.body.classList.add("dark");
-}
-
-//function that tracks the light theme between page loads with a localStorage variable 
-//sets the toggle button
-//and sets the light theme styling
-function setToLightMode() {
-    localStorage.setItem('theme', 'light');
-    document.documentElement.setAttribute('data-theme', 'light');
-    toggleButton.checked = false;
-    document.body.classList.remove("dark");
-}
-
-//function that evaluates theme switching
-function switchTheme(e) {
-    if (e.target.checked) {
-        setToDarkMode();
-    } else {
-        setToLightMode();
-    }
-}
-
-//listener for changing themes
-toggleButton.addEventListener('change', switchTheme, false);
-
-// detectColorScheme checks if preferred theme is dark
-// if it is, it sets the data-theme variable to dark 
-// which then causes the site theme to be set to dark theme
-// if it isn't, it sets the site theme to light theme
-// setToLightMode sets the data-theme variable to light
-// subsequent checks then work with either dark or light data-themes
+// When someone clicks the button
+toggleButton.addEventListener('click', () => {
+  // get their darkMode setting
+  darkMode = localStorage.getItem('darkMode'); 
+  
+  // if it not current enabled, enable it
+  if (darkMode !== 'enabled') {
+    enableDarkMode();
+  // if it has been enabled, turn it off  
+  } else {  
+    disableDarkMode(); 
+  }
+});
