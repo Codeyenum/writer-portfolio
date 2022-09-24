@@ -90,7 +90,7 @@ body.dark {
 /* ------------------- */
 
 /* general */
-.flex-row {
+.flex {
     display: flex;
     gap: 1.5rem;
 }
@@ -199,9 +199,14 @@ body.dark {
 }
 
 .main-container {
+    flex-direction: column;
     margin-inline: auto;
     max-width: 100rem;
     padding: 2rem 1.5rem;
+}
+
+.home-main>div {
+    flex-direction: column;
 }
 
 .bold-heading {
@@ -244,6 +249,7 @@ header a {
 
 footer.container {
     padding: 0 1.5rem 1rem;
+    color:hsla(0, 0%, 92%, 1);
 }
 
 .material-symbols-outlined {
@@ -273,14 +279,20 @@ footer.container {
 .mobile-nav {
     background-color: hsl(var(--clr-purple));
     color: hsl(var(--clr-white));
+    flex-direction: column;
     top: 0;
     left: 0;
-    gap: .5rem;
+    gap: 0;
     position: fixed;
     width: 57.5vw;
     min-height: 100vh;
     transition: 0.5s ease-in-out;
     z-index: 50;
+}
+
+.mobile-nav nav {
+    flex-direction: column;
+    gap: 0;
 }
 
 .mobile-nav a {
@@ -309,7 +321,7 @@ footer.container {
     position: relative;
     height: 1.5rem;
     width: 3rem;
-    background-color: hsl(var(--clr-white));
+    background-color: var(--accent-color);
     background-size: cover;
     border-radius: 50px;
     margin-top: 1rem;
@@ -344,18 +356,58 @@ footer.container {
 /* ------------------- */
 /* Works Page          */
 /* ------------------- */
-.works-header {
+.works-pg-header {
+    gap: 0;
+}
+
+.works-pg-title {
     width: 100%;
     padding-left: 10%;
     font-weight: 700;
 }
 
-.fashion-header {
+.works-main>div.flex {
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.works-main, .fashion-main {
+    gap: 3.75rem;
+}
+
+.fashion-pg-header {
+    gap: 0;
+    flex-direction: row-reverse;
+} 
+
+.fashion-pg-title {
     width: 100%;
     padding: 0 10% 0 0;
     font-weight: 700;
 }
 
+.fashion-main>section.flex {
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.contact-main>div.flex {
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
 .arrow-link span {
     display: block;
+}
+
+ul {
+    color: hsl(var(--clr-purple));
+    list-style: none;
+    /* margin-bottom: 2rem; */
+}
+
+ul a {
+    text-decoration: none; 
+    color: var(--fg-color);   
+    cursor: pointer;
 }
