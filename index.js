@@ -30,14 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let worksPage = document.querySelector(".works-page");
     let contactPage = document.querySelector(".contact-page");
 
-    if (path == '/index.html') {
-        homePage.classList.add("active");
-    } else if (path == '/works/works.html') {
+    if (path.includes("index.html")) {
+        homePage.classList.add("active");        
+    } else if (path.includes('/works/works.html')) {
+        worksPage.classList.add("active");        
+    } else if (path.includes('/works/fashion.html')) {
         worksPage.classList.add("active");
-        console.log("works");
-    } else if (path == '/works/fashion.html') {
-        worksPage.classList.add("active");
-    } else if (path == '/contact.html') {
+    } else if (path.includes('/contact.html')) {
         contactPage.classList.add("active");
     }
 });
