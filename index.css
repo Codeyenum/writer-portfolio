@@ -76,22 +76,6 @@ body {
 }
 
 /* setting dark mode based on system preference */
-
-/* @media (prefers-color-scheme: dark) {
-    body {
-        --clr-black: 0, 0%, 5%;
-        --clr-white: 0 0% 98%;
-
-        --fg-color: hsl(var(--clr-black));
-        --bg-color: hsl(var(--clr-white));
-        --accent-color : hsl(var(--clr-white));
-
-        --fg-color: hsl(var(--clr-white));
-        --bg-color: hsl(var(--clr-black));
-        --accent-color : hsl(var(--clr-darker-purple));
-    }
-} */
-
 body.dark {
     --clr-black: 0, 0%, 5%;
     --clr-white: 0 0% 98%;
@@ -278,6 +262,7 @@ footer.container {
     position: fixed;
     min-height: 100vh;
     min-width: 100vw;
+    z-index: 1;
 }
 
 .mobile-nav-lightbox.hide,
@@ -295,6 +280,7 @@ footer.container {
     width: 57.5vw;
     min-height: 100vh;
     transition: 0.5s ease-in-out;
+    z-index: 50;
 }
 
 .mobile-nav a {

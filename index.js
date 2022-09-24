@@ -9,12 +9,19 @@ let toggleButton = document.querySelector(".toggle-button");
 
 menuButton.addEventListener("click", () => {
     lightBox.classList.toggle("hide");
-    mobileNav.classList.toggle("hide");
+    mobileNav.classList.toggle("hide");    
 })
 
 closeButton.addEventListener("click", () => {
     lightBox.classList.toggle("hide");
     mobileNav.classList.toggle("hide");
+})
+
+document.addEventListener("click", (e) => {
+    if(e.target !== menuButton && e.target !== mobileNav) {
+        lightBox.classList.add("hide");
+        mobileNav.classList.add("hide");
+    }
 })
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -34,44 +41,47 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-
 // check for saved 'darkMode' in localStorage
-let darkMode = localStorage.getItem('darkMode'); 
+let darkMode = localStorage.getItem('darkMode');
 
 // const darkModeToggle = document.querySelector('#dark-mode-toggle');
 
 const enableDarkMode = () => {
-  // 1. Add the class to the body
-  document.body.classList.add('dark');
-  // 2. Update darkMode in localStorage
-  localStorage.setItem('darkMode', 'enabled');
+    // 1. Add the class to the body
+    document.body.classList.add('dark');
+    // 2. Update darkMode in localStorage
+    localStorage.setItem('darkMode', 'enabled');
+    // 3. Update toggler position
+    toggleButton.checked = true;
 }
 
 const disableDarkMode = () => {
-  // 1. Remove the class from the body
-  document.body.classList.remove('dark');
-  // 2. Update darkMode in localStorage 
-  localStorage.setItem('darkMode', null);
+    // 1. Remove the class from the body
+    document.body.classList.remove('dark');
+    // 2. Update darkMode in localStorage 
+    localStorage.setItem('darkMode', null);
+    // 3. Update toggler position
+    toggleButton.checked = false;
 }
- 
+
 // If the user already visited and enabled darkMode
 // start things off with it on
 if (darkMode === 'enabled') {
-  enableDarkMode();
+    enableDarkMode();
 } else {
     disableDarkMode();
 }
 
 // When someone clicks the button
 toggleButton.addEventListener('click', () => {
-  // get their darkMode setting
-  darkMode = localStorage.getItem('darkMode'); 
-  
-  // if it not current enabled, enable it
-  if (darkMode !== 'enabled') {
-    enableDarkMode();
-  // if it has been enabled, turn it off  
-  } else {  
-    disableDarkMode(); 
-  }
+    // get their darkMode setting
+    darkMode = localStorage.getItem('darkMode');
+
+    // if it's not currently enabled, enable it
+    if (darkMode !== 'enabled') {
+        enableDarkMode();
+        // if it has been enabled, turn it off  
+    } else {
+        disableDarkMode();
+    }
 });
