@@ -18,7 +18,7 @@ closeButton.addEventListener("click", () => {
 })
 
 document.addEventListener("click", (e) => {
-    if(e.target !== menuButton && e.target !== mobileNav) {
+    if(e.target !== menuButton && e.target !== mobileNav  && e.target !== toggleButton) {
         lightBox.classList.add("hide");
         mobileNav.classList.add("hide");
     }
