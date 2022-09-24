@@ -66,9 +66,10 @@ body {
     font-size: var(--fs-300);
     line-height: 2;
     min-height: 100vh;
-    
+
     --fg-color: hsl(var(--clr-black));
     --bg-color: hsl(var(--clr-white));
+    --accent-color : hsl(var(--clr-white));
 }
 
 /* setting dark mode based on system preference */
@@ -79,16 +80,18 @@ body {
 
         --fg-color: hsl(var(--clr-black));
         --bg-color: hsl(var(--clr-white));
+        --accent-color : hsl(var(--clr-white));
     }
 }
 
 body.dark {
-        --clr-black: 0, 0%, 5%;
-        --clr-white: 0 0% 98%;
+    --clr-black: 0, 0%, 5%;
+    --clr-white: 0 0% 98%;
 
-        --fg-color: hsl(var(--clr-white));
-        --bg-color: hsl(var(--clr-black));
-    }
+    --fg-color: hsl(var(--clr-white));
+    --bg-color: hsl(var(--clr-black));
+    --accent-color : hsl(var(--clr-darker-purple));
+}
 
 /* ------------------- */
 /* Utility Classes     */
@@ -252,22 +255,6 @@ footer.container {
         'opsz' 48
 }
 
-.edu-cert--titles h2::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 1px;
-    background-color: rgb(212, 175, 55);
-    transition: .3s ease-in;
-}
-
-.edu-cert--titles h2:hover:before {
-    width: 100%;
-    transition: .3s ease-in;
-}
-
 .mobile-nav-lightbox {
     background-color: hsla(var(--clr-dark-purple) / .3);
     top: 0;
@@ -287,6 +274,7 @@ footer.container {
     color: hsl(var(--clr-white));
     top: 0;
     left: 0;
+    gap: .5rem;
     position: fixed;
     width: 57.5vw;
     min-height: 100vh;
@@ -295,9 +283,32 @@ footer.container {
 
 .mobile-nav a {
     color: hsl(var(--clr-white));
+    margin: 0 -1.5rem;
+    padding: .5rem 1.5rem;
+    position: relative;
 }
 
-input {
+.mobile-nav a:hover {
+    background-color: hsl(var(--clr-dark-purple));
+}
+
+.mobile-nav a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    height: 0%;
+    background-color: var(--accent-color);
+    transition: .3s ease-in;
+}
+
+.mobile-nav a:hover:before {
+    height: 100%;    
+    transition: .3s ease-in;
+}
+
+.toggle-button {
     -webkit-appearance: none;
     position: relative;
     height: 1.5rem;
@@ -305,10 +316,11 @@ input {
     background-color: hsl(var(--clr-white));
     background-size: cover;
     border-radius: 50px;
+    margin-top: 1rem;
     outline: none;
 }
 
-input:before {
+.toggle-button:before {
     background-color: hsl(var(--clr-purple));
     border-radius: 50%;
     content: url("./images/sun.png");
@@ -328,7 +340,7 @@ input:before {
     transition: transform .2s ease-in-out;
 }
 
-input:checked:before {
+.toggle-button:checked:before {
     content: url("./images/moon.png");
     transform: translate(110%, -50%);
 }
