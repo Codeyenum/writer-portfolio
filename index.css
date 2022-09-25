@@ -68,7 +68,7 @@ body {
     color: var(--fg-color);
     font-family: var(--ff-pt-mono);
     font-size: var(--fs-300);
-    line-height: 2;
+    line-height: 1.5rem;
     min-height: 100vh;
 
     --fg-color: hsl(var(--clr-black));
