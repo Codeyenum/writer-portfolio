@@ -421,7 +421,7 @@ ul a {
 @media screen and (orientation:landscape)
 and (min-width: 425px) 
 and (max-device-width: 760px) {
-   body {
-    font-size: 14px;
-   }
+    .works-main img {
+        min-height: 330px;
+    }
 }
