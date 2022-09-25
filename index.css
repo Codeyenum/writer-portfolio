@@ -68,7 +68,7 @@ body {
     color: var(--fg-color);
     font-family: var(--ff-pt-mono);
     font-size: var(--fs-300);
-    line-height: 1.5rem;
+    line-height: 2;
     min-height: 100vh;
 
     --fg-color: hsl(var(--clr-black));
@@ -416,4 +416,12 @@ ul a {
     text-decoration: none; 
     color: var(--fg-color);   
     cursor: pointer;
+}
+
+@media screen and (orientation:landscape)
+and (min-width: 425px) 
+and (max-device-width: 760px) {
+   body {
+    line-height: 1.5;
+   }
 }
