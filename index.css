@@ -248,8 +248,7 @@ header a {
 }
 
 footer.container {
-    padding: 0 1.5rem 1rem;
-    color:hsla(0, 0%, 92%, 1);
+    padding: 0 1.5rem 1rem;    
 }
 
 .material-symbols-outlined {
