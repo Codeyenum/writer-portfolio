@@ -428,7 +428,7 @@ and (max-device-width: 760px) {
         padding: 3rem 3.5rem;
     }
 
-    /* .works-main img {
-        height: 300px;
-    } */
+    .works-main img {
+        min-height: 300px;
+    }
 }
