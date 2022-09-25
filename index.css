@@ -49,6 +49,7 @@
 /* Make images easier to work with */
 img,
 picture {
+    height: 100%;
     max-width: 100%;
     display: block;
 }
@@ -350,6 +351,12 @@ footer.container {
 .toggle-button:checked:before {
     content: url("./images/moon.png");
     transform: translate(110%, -50%);
+}
+
+img.container {
+    padding: 0;
+    margin-inline: auto;    
+    max-width: 100%;
 }
 
 /* ------------------- */
