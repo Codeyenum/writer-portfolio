@@ -422,6 +422,6 @@ ul a {
 and (min-width: 425px) 
 and (max-device-width: 760px) {
    body {
-    line-height: 1.5;
+    font-size: 14px;
    }
 }
