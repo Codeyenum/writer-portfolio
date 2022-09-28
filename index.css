@@ -105,7 +105,6 @@ body.dark {
 .container {
     padding: 1rem 1.5rem;
     margin-inline: auto;
-    max-width: 80rem;
 }
 
 /* colors */
@@ -249,7 +248,7 @@ header a {
 }
 
 footer.container {
-    padding: 0 1.5rem 1rem;    
+    padding: 0 1.5rem 1rem;
 }
 
 .material-symbols-outlined {
@@ -286,8 +285,9 @@ footer.container {
     top: 0;
     left: 0;
     width: 57.5vw;
-    max-width: 400px;
+    max-width: 18rem;
     min-height: 100vh;
+
     transition: 0.5s ease-in-out;
     z-index: 5;
 }
@@ -305,7 +305,7 @@ footer.container {
 }
 
 .mobile-nav a.active {
-    background-color: hsl(var(--clr-dark-purple));    
+    background-color: hsl(var(--clr-dark-purple));
 }
 
 .mobile-nav a.active::before {
@@ -357,7 +357,7 @@ footer.container {
 
 img.container {
     padding: 0;
-    margin-inline: auto;    
+    margin-inline: auto;
     max-width: 100%;
 }
 
@@ -379,14 +379,15 @@ img.container {
     gap: .5rem;
 }
 
-.works-main, .fashion-main {
+.works-main,
+.fashion-main {
     gap: 3.75rem;
 }
 
 .fashion-pg-header {
     gap: 0;
     flex-direction: row-reverse;
-} 
+}
 
 .fashion-pg-title {
     width: 100%;
@@ -420,12 +421,12 @@ ul {
 }
 
 ul a {
-    text-decoration: none; 
-    color: var(--fg-color);   
+    text-decoration: none;
+    color: var(--fg-color);
     cursor: pointer;
 }
 
-@media screen and (min-width: 480px) and (max-device-width: 760px) {
+@media screen and (min-width: 480px) and (max-width: 760px) {
     .main-container {
         flex-direction: column;
         margin-inline: auto;
@@ -438,12 +439,12 @@ ul a {
     }
 }
 
-@media screen and (min-width: 761px) and (max-device-width: 1080px) {
+@media screen and (min-width: 761px) and (max-width: 1080px) {
 
-    .flex {        
+    .flex {
         gap: 2.5rem;
     }
-    
+
     .container {
         padding: 2rem 5rem;
     }
@@ -459,24 +460,106 @@ ul a {
 
     .works-main {
         flex-direction: row;
-        flex-wrap: wrap;        
+        flex-wrap: wrap;
     }
-    
+
     .works-main>div.flex {
-        flex-grow: 1;        
+        flex-grow: 1;
     }
 
     .fashion-main>section.flex {
         flex-direction: row;
         gap: 4.5rem;
     }
+
     .fashion-main div.flex {
-        flex-grow: 1; 
-        justify-content: center;               
+        flex-grow: 1;
+        justify-content: center;
     }
 
     .fashion-main img {
         flex-grow: 1;
     }
+}
 
+@media screen and (min-width: 1081px) {
+
+    :root {
+        /* font-sizes */        
+        --fs-900: 1.875rem;
+        --fs-800: 1.75rem;
+        --fs-700: 1.5rem;
+        --fs-600: 1.375rem;
+        --fs-500: 1.25rem;
+        --fs-400: 1.125rem;
+        --fs-300: 1rem; 
+        --fs-200: 0.875rem;       
+    }
+
+    .flex {
+        gap: 3rem;
+    }
+
+    .container {
+        padding: 2rem 5rem;
+    }
+
+    .mobile-nav-lightbox {
+        left: -100vw;
+    }
+
+    .mobile-nav.container {
+        left: 0;
+        gap: 0;
+        padding: 2.5rem 1.5rem;
+    }
+
+    #close-button,
+    #menu-button {
+        display: none;
+    }
+
+    header.container, footer.container {
+        margin-left: 18rem;
+    }
+
+    .works-pg-title {
+        width: 100%;
+        padding-left: 0;
+        font-weight: 700;
+    }
+
+    .fashion-pg-title {
+        width: 100%;
+        padding: 0;
+        font-weight: 700;
+    }
+
+    .main-container {
+        margin-left: 18rem;
+        padding: 4rem 5rem;
+    }
+
+    .works-main {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .works-main>div.flex {
+        flex-grow: 1;
+    }
+
+    .fashion-main>section.flex {
+        flex-direction: row;
+        gap: 4.5rem;
+    }
+
+    .fashion-main div.flex {
+        flex-grow: 1;
+        justify-content: center;
+    }
+
+    .fashion-main img {
+        flex-grow: 1;
+    }
 }
