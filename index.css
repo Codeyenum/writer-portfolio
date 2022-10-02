@@ -358,7 +358,7 @@ footer.container {
 img.container {
     padding: 0;
     margin-inline: auto;
-    max-width: 100%;
+    /* max-width: 100%; */
 }
 
 /* ------------------- */
@@ -403,6 +403,15 @@ img.container {
 .fashion-main div.flex {
     flex-direction: column;
     gap: 1.25rem;
+}
+
+.fashion-article-title {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.fashion-article-summary {
+    font-size: 0.875rem;
 }
 
 .contact-main>div.flex {
@@ -469,7 +478,7 @@ ul a {
 
     .fashion-main>section.flex {
         flex-direction: row;
-        gap: 4.5rem;
+        gap: 1.75rem;
     }
 
     .fashion-main div.flex {
@@ -485,15 +494,15 @@ ul a {
 @media screen and (min-width: 1081px) {
 
     :root {
-        /* font-sizes */        
+        /* font-sizes */
         --fs-900: 1.875rem;
         --fs-800: 1.75rem;
         --fs-700: 1.5rem;
         --fs-600: 1.375rem;
         --fs-500: 1.25rem;
         --fs-400: 1.125rem;
-        --fs-300: 1rem; 
-        --fs-200: 0.875rem;       
+        --fs-300: 1rem;
+        --fs-200: 0.875rem;
     }
 
     .flex {
@@ -501,43 +510,33 @@ ul a {
     }
 
     .container {
-        padding: 2rem 5rem;
-    }
-
-    .mobile-nav-lightbox {
-        left: -100vw;
+        padding: 2.25rem 7rem;
     }
 
     .mobile-nav.container {
-        left: 0;
         gap: 0;
         padding: 2.5rem 1.5rem;
     }
 
-    #close-button,
-    #menu-button {
-        display: none;
-    }
-
-    header.container, footer.container {
-        margin-left: 18rem;
-    }
-
     .works-pg-title {
         width: 100%;
-        padding-left: 0;
+        padding-left: 6%;
         font-weight: 700;
     }
 
     .fashion-pg-title {
         width: 100%;
-        padding: 0;
+        padding-left: 6%;
         font-weight: 700;
     }
 
     .main-container {
-        margin-left: 18rem;
-        padding: 4rem 5rem;
+        padding: 5.125rem 7rem;
+    }
+
+    .works-main,
+    .fashion-main {
+        gap: 3.75rem;
     }
 
     .works-main {
@@ -545,13 +544,18 @@ ul a {
         flex-wrap: wrap;
     }
 
-    .works-main>div.flex {
+    .works-main>div.flex {        
         flex-grow: 1;
+        text-align: center;
+    }
+
+    .works-main>div img {
+        min-width: 390px;
     }
 
     .fashion-main>section.flex {
         flex-direction: row;
-        gap: 4.5rem;
+        gap: 4rem;
     }
 
     .fashion-main div.flex {
@@ -560,6 +564,17 @@ ul a {
     }
 
     .fashion-main img {
+        min-width: 415px;
         flex-grow: 1;
+    }
+
+    .fashion-article-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+    .fashion-article-summary {
+        font-size: 1.2rem;
+        line-height: 1.75;
     }
 }
