@@ -241,6 +241,7 @@ header {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid hsla(var(--clr-purple) / 0.2);
+    position: relative;
 }
 
 header a {
@@ -400,8 +401,14 @@ img.container {
     font-weight: 700;
 }
 
-.fashion-heading {
+.fashion-header > *:where(:not(:last-child)){
     display: none;
+}
+
+.fashion-heading {
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
 }
 
 .fashion-main>section.flex {
@@ -452,6 +459,10 @@ ul a {
         padding: 3rem 3.5rem;
     }
 
+    .container {
+        padding: 1rem 3.5rem;
+    }
+
     .works-main img {
         min-height: 315px;
     }
@@ -484,6 +495,10 @@ ul a {
     
     #menu-button {
         display: none;
+    }
+
+    .logo-link {
+        display: block;
     }
 
     .toggle-button {
@@ -524,7 +539,7 @@ ul a {
         flex-direction: row-reverse; 
         position: absolute;  
         width: 100%; 
-        top: 2rem;
+        bottom: -4rem;
     }
     
     .fashion-heading a {
@@ -593,6 +608,10 @@ ul a {
         display: none;
     }
 
+    .logo-link {
+        display: block;
+    }
+
     .toggle-button {
         background-color: hsla(var(--clr-purple) / .4);
         margin-top: 0;
@@ -647,7 +666,7 @@ ul a {
     flex-direction: row-reverse; 
     position: absolute;  
     width: 100%; 
-    top: 2rem;
+    bottom: -4rem;
 }
 
 .fashion-heading a {
