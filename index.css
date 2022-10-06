@@ -198,6 +198,10 @@ body.dark {
     text-align: right;
 }
 
+/* ------------------- */
+/* Homepage Styling    */
+/* ------------------- */
+
 .main-container {
     flex-direction: column;
     margin-inline: auto;
@@ -370,84 +374,73 @@ img.container {
 /* ------------------- */
 /* Works Page          */
 /* ------------------- */
-.works-pg-header {
-    gap: 0;
-}
 
-.works-pg-title {
-    width: 100%;
-    padding-left: 10%;
-    font-weight: 700;
-}
-
-.works-main>div.flex {
+.work-category {
     flex-direction: column;
     gap: .5rem;
 }
 
 .works-main,
-.fashion-main {
+.faxn-main {
     gap: 3.75rem;
     position: relative;
 }
 
-.fashion-pg-header {
-    gap: 0;
-    flex-direction: row-reverse;
-}
-
-.fashion-pg-title {
-    width: 100%;
-    padding: 0 10% 0 0;
-    font-weight: 700;
-}
-
-.fashion-header>*:where(:not(:last-child)) {
+.faxn-header>*:where(:not(:last-child)) {
     display: none;
 }
 
-.fashion-heading {
+.link-to-works span {
+    display: block;
+}
+
+.faxn-page-title-container {
     flex-direction: row-reverse;
     align-items: center;
     width: 100%;
 }
 
-.fashion-main>section.flex {
+.faxn-page-title {
+    width: 100%;
+    padding: 0 10% 0 0;
+    font-weight: 700;
+}
+
+.faxn-article {
     flex-direction: column;
     gap: 1.25rem;
 }
 
-.fashion-main div.flex {
+.faxn-article-content {
     flex-direction: column;
     gap: 1.25rem;
 }
 
-.fashion-main img {
-    max-height: 265px;
+.faxn-main img {
+    max-height: 230px;
 }
 
-.fashion-article-title {
+.faxn-article-title {
     font-size: 1rem;
     font-weight: 700;
 }
 
-.fashion-article-summary {
+.faxn-article-summary {
     font-size: 0.875rem;
 }
+
+/* ------------------- */
+/* Contact Page        */
+/* ------------------- */
 
 .contact-main>div.flex {
     flex-direction: column;
     gap: 1.25rem;
 }
 
-.arrow-link span {
-    display: block;
-}
-
 ul {
     color: hsl(var(--clr-purple));
-    list-style: none;
-    /* margin-bottom: 2rem; */
+    list-style: none;    
 }
 
 ul a {
@@ -457,6 +450,11 @@ ul a {
 }
 
 @media screen and (min-width: 480px) and (max-width: 760px) {
+    
+    .container {
+        padding: 1rem 3.5rem;
+    }
+
     .main-container {
         flex-direction: column;
         margin-inline: auto;
@@ -464,15 +462,11 @@ ul a {
         padding: 3rem 3.5rem;
     }
 
-    .container {
-        padding: 1rem 3.5rem;
-    }
-
     .works-main img {
         min-height: 315px;
     }
 
-    .fashion-main img {
+    .faxn-main img {
         max-height: 100%;
     }
 }
@@ -485,11 +479,6 @@ ul a {
 
     .container {
         padding: 1.5rem 5rem;
-    }
-
-    .desktop-nav,
-    .desktop-nav~input {
-        display: inline-flex;
     }
 
     header a {
@@ -511,6 +500,11 @@ ul a {
         display: block;
     }
 
+    .desktop-nav,
+    .desktop-nav~input {
+        display: inline-flex;
+    }
+
     .toggle-button {
         background-color: hsla(var(--clr-purple) / .4);
         margin-top: 0;
@@ -530,21 +524,21 @@ ul a {
         flex-wrap: wrap;
     }
 
-    .works-main>div.flex {
+    .work-category {
         flex-grow: 1;
     }
 
-    .fashion-pg-title {
+    .faxn-page-title {
         width: 100%;
         padding: 0 18.5% 0 0;
         font-weight: 700;
     }
 
-    .fashion-main.main-container {
+    .faxn-main.main-container {
         padding: 7rem 5rem 4rem;
     }
 
-    .fashion-heading {
+    .faxn-page-title-container {
         display: flex;
         flex-direction: row-reverse;
         position: absolute;
@@ -552,26 +546,26 @@ ul a {
         bottom: -4rem;
     }
 
-    .fashion-heading a {
+    .faxn-page-title-container a {
         text-decoration: none;
     }
 
-    .fashion-main>section.flex {
+    .faxn-article {
         flex-direction: row;
         gap: 1.75rem;
     }
 
-    .fashion-main div.flex {
+    .faxn-article-content {
         flex-grow: 1;
         justify-content: center;
     }
 
-    .fashion-article-title {
+    .faxn-article-title {
         font-size: 1.1rem;
         font-weight: 700;
     }
 
-    .fashion-main img {
+    .faxn-article img {
         flex-grow: 1;
         max-height: 100%;
         max-width: 50%;
@@ -634,13 +628,7 @@ ul a {
         padding: 2.5rem 1.5rem;
     }
 
-    .works-pg-title {
-        width: 100%;
-        padding-left: 6%;
-        font-weight: 700;
-    }
-
-    .fashion-pg-title {
+    .faxn-page-title {
         width: 100%;
         padding: 0 20% 0 0;
         font-weight: 700;
@@ -651,7 +639,7 @@ ul a {
     }
 
     .works-main,
-    .fashion-main {
+    .faxn-main {
         gap: 3.75rem;
     }
 
@@ -660,20 +648,20 @@ ul a {
         flex-wrap: wrap;
     }
 
-    .works-main>div.flex {
+    .work-category {
         flex-grow: 1;
         text-align: center;
     }
 
-    .works-main>div img {
+    .work-category img {
         min-width: 390px;
     }
 
-    .fashion-main.main-container {
+    .faxn-main.main-container {
         padding: 7rem 7rem 4rem;
     }
 
-    .fashion-heading {
+    .faxn-page-title-container {
         display: flex;
         flex-direction: row-reverse;
         position: absolute;
@@ -681,34 +669,33 @@ ul a {
         bottom: -4.5rem;
     }
 
-    .fashion-heading a {
+    .faxn-page-title-container a {
         text-decoration: none;
     }
 
-
-    .fashion-main>section.flex {
+    .faxn-article {
         flex-direction: row;
         gap: 4rem;
     }
 
-    .fashion-main div.flex {
+    .faxn-article-content {
         flex-grow: 1;
         justify-content: center;
     }
-
-    .fashion-main img {
-        min-width: 415px;
-        max-height: 100%;
-        flex-grow: 1;
-    }
-
-    .fashion-article-title {
+    
+    .faxn-article-title {
         font-size: 1.5rem;
         font-weight: 700;
     }
 
-    .fashion-article-summary {
+    .faxn-article-summary {
         font-size: 1.2rem;
         line-height: 1.75;
+    }
+
+    .faxn-article img {
+        min-width: 415px;
+        max-height: 100%;
+        flex-grow: 1;
     }
 }
