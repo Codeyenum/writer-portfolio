@@ -26,18 +26,26 @@ document.addEventListener("click", (e) => {
 
 document.addEventListener("DOMContentLoaded", function () {
     let path = window.location.pathname;
-    let homePage = document.querySelector(".home-page");
-    let worksPage = document.querySelector(".works-page");
-    let contactPage = document.querySelector(".contact-page");
+    let homePages = document.querySelectorAll(".home-page");
+    let worksPages = document.querySelectorAll(".works-page");
+    let contactPages = document.querySelectorAll(".contact-page");
     
     if (path.includes("index.html") || path.endsWith("/writer-portfolio/")) {
-        homePage.classList.add("active");        
+        for(let homePage of homePages) {
+            homePage.classList.add("active");        
+        }
     } else if (path.includes('/works/works.html')) {
-        worksPage.classList.add("active");        
+        for(let worksPage of worksPages) {
+            worksPage.classList.add("active");        
+        }              
     } else if (path.includes('/works/fashion.html')) {
-        worksPage.classList.add("active");
+        for(let worksPage of worksPages) {
+            worksPage.classList.add("active");        
+        }        
     } else if (path.includes('/contact.html')) {
-        contactPage.classList.add("active");
+        for(let contactPage of contactPages) {
+            contactPage.classList.add("active");        
+        }        
     }
 });
 

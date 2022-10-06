@@ -477,9 +477,11 @@ ul a {
         font-weight: 700;
         letter-spacing: .05rem;
     }
+
     header a.active {
         border-bottom: 3px solid hsl(var(--clr-purple));
     }
+    
     #menu-button {
         display: none;
     }
@@ -582,9 +584,11 @@ ul a {
         font-weight: 700;
         letter-spacing: .05rem;
     }
+
     header a.active {
         border-bottom: 3px solid hsl(var(--clr-purple));
     }
+
     #menu-button {
         display: none;
     }
