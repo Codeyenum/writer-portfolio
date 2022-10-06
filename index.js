@@ -46,6 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
         for(let contactPage of contactPages) {
             contactPage.classList.add("active");        
         }        
+    } else {
+        for(let homePage of homePages) {
+            homePage.classList.add("active");        
+        }
     }
 });
 
