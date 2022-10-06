@@ -386,6 +386,7 @@ img.container {
 .works-main,
 .fashion-main {
     gap: 3.75rem;
+    position: relative;
 }
 
 .fashion-pg-header {
@@ -397,6 +398,10 @@ img.container {
     width: 100%;
     padding: 0 10% 0 0;
     font-weight: 700;
+}
+
+.fashion-heading {
+    display: none;
 }
 
 .fashion-main>section.flex {
@@ -502,6 +507,28 @@ ul a {
         flex-grow: 1;
     }
 
+    .fashion-pg-title {
+        width: 100%;
+        padding: 0 18.5% 0 0;
+        font-weight: 700;
+    }
+    
+    .fashion-main.main-container {
+        padding: 7rem 5rem 4rem;
+    }
+    
+    .fashion-heading {
+        display: flex;
+        flex-direction: row-reverse; 
+        position: absolute;  
+        width: 100%; 
+        top: 2rem;
+    }
+    
+    .fashion-heading a {
+        text-decoration: none;
+    }
+    
     .fashion-main>section.flex {
         flex-direction: row;
         gap: 1.75rem;
@@ -512,8 +539,14 @@ ul a {
         justify-content: center;
     }
 
+    .fashion-article-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+
     .fashion-main img {
         flex-grow: 1;
+        max-width: 50%;
     }
 }
 
@@ -574,7 +607,7 @@ ul a {
 
     .fashion-pg-title {
         width: 100%;
-        padding-left: 6%;
+        padding: 0 20% 0 0;    
         font-weight: 700;
     }
 
@@ -601,6 +634,23 @@ ul a {
         min-width: 390px;
     }
 
+.fashion-main.main-container {
+    padding: 7rem 7rem 4rem;
+}
+
+.fashion-heading {
+    display: flex;
+    flex-direction: row-reverse; 
+    position: absolute;  
+    width: 100%; 
+    top: 2rem;
+}
+
+.fashion-heading a {
+    text-decoration: none;
+}
+
+
     .fashion-main>section.flex {
         flex-direction: row;
         gap: 4rem;
@@ -617,7 +667,7 @@ ul a {
     }
 
     .fashion-article-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         font-weight: 700;
     }
 
