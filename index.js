@@ -5,7 +5,7 @@ let lightBox = document.querySelector(".mobile-nav-lightbox");
 let mobileNav = document.querySelector(".mobile-nav");
 let mobileNavMenu = document.querySelector(".mobile-nav a");
 
-let toggleButton = document.querySelector(".toggle-button");
+let toggleButtons = document.querySelectorAll(".toggle-button");
 
 menuButton.addEventListener("click", () => {
     lightBox.classList.toggle("hide");
@@ -18,7 +18,7 @@ closeButton.addEventListener("click", () => {
 })
 
 document.addEventListener("click", (e) => {
-    if(e.target !== menuButton && e.target !== mobileNav  && e.target !== toggleButton) {
+    if(e.target !== menuButton && e.target !== mobileNav  && e.target !== toggleButtons[1]) {
         lightBox.classList.add("hide");
         mobileNav.classList.add("hide");
     }
@@ -60,7 +60,9 @@ const enableDarkMode = () => {
     // 2. Update darkMode in localStorage
     localStorage.setItem('darkMode', 'enabled');
     // 3. Update toggler position
-    toggleButton.checked = true;
+    for(let toggleButton of toggleButtons) {
+        toggleButton.checked = true;
+    }    
 }
 
 const disableDarkMode = () => {
@@ -69,7 +71,9 @@ const disableDarkMode = () => {
     // 2. Update darkMode in localStorage 
     localStorage.setItem('darkMode', null);
     // 3. Update toggler position
-    toggleButton.checked = false;
+    for(let toggleButton of toggleButtons) {
+        toggleButton.checked = false;
+    }    
 }
 
 // If the user already visited and enabled darkMode
@@ -81,15 +85,17 @@ if (darkMode === 'enabled') {
 }
 
 // When someone clicks the button
-toggleButton.addEventListener('click', () => {
-    // get their darkMode setting
-    darkMode = localStorage.getItem('darkMode');
-
-    // if it's not currently enabled, enable it
-    if (darkMode !== 'enabled') {
-        enableDarkMode();
-        // if it has been enabled, turn it off  
-    } else {
-        disableDarkMode();
-    }
-});
+for(let toggleButton of toggleButtons) {
+    toggleButton.addEventListener('click', () => {
+        // get their darkMode setting
+        darkMode = localStorage.getItem('darkMode');
+    
+        // if it's not currently enabled, enable it
+        if (darkMode !== 'enabled') {
+            enableDarkMode();
+            // if it has been enabled, turn it off  
+        } else {
+            disableDarkMode();
+        }
+    });    
+}
