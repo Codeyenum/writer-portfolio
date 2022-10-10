@@ -398,6 +398,7 @@ img.container {
     flex-direction: row-reverse;
     align-items: center;
     width: 100%;
+    z-index: 1;
 }
 
 .faxn-page-title {
